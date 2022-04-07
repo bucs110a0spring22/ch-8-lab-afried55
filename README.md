@@ -8,7 +8,7 @@
 Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+Created a class called StringUtility and made different methods in it that work on strings.
 
 ## GRACE DAYS
 Grace days used for this assignment: < # >
