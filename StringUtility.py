@@ -1,14 +1,23 @@
 class StringUtility:
   def __init__(self, string = ''):
-    ''''''
+    '''
+    This function initializes a StringUtility object
+    args: self (StringUtility object), string (str)
+    '''
     self.original = string
   
   def __str__(self):
-    ''''''
+    '''
+    This function sets a string that is returned when a StringUtility object is printed.
+    args: self (StringUtility object)
+    returns: self.original (str)
+    '''
     return self.original
   
   def vowels(self):
-    ''''''
+    '''
+    This function 
+    '''
     return ("many" if (sum([self.original.count(i) for i in "aeiouAEIOU"])>= 5) else str(sum([self.original.count(i) for i in "aeiouAEIOU"])))
   
   def bothEnds(self):
@@ -26,30 +35,20 @@ class StringUtility:
   
   def cipher(self):
     ''''''
-    #find ord + length, if length > ord(z) or ord(Z) - find the difference from ord(z) and add that to ord(a) or ord(A). Use lists
-    empty = ''
+    cipherString = ''
     for i in self.original:
-      neword = 0
-      #PROF NOTES: instead of manually writing in the ascii values, let python do the work for you
-      # try changing ALL the hard-coded ascii value to function calls and your code will work
-      # for example, below would become
-      #     if chr('a')<=ord(i)<=chr('z'):
+      newOrd = ord(i) + len(self.original)
       if ord('a')<=ord(i)<=ord('z'):
-        neword = ord(i) + len(self.original)
         for x in range(ord('a'),ord('z')+1):
-          if (neword-x)%26==0:
-            neword = x
-        empty = empty + chr(neword)
+          if (newOrd-x)%26==0:
+            cipherString = cipherString + chr(x)
       elif ord('A') <= ord(i) <= ord('Z'):
-        neword = ord(i) + len(self.original)
         for x in range(ord('A'),ord('Z')+1):
-          if (neword-x)%26==0:
-            neword = x
-        empty = empty + chr(neword)
+          if (newOrd-x)%26==0:
+            cipherString = cipherString + chr(x)
       else:
-        empty = empty + i
-    return empty
+        cipherString = cipherString + i
+    return cipherString
 
-    #it might be wrapping around twice because it is so long!!!!!!
 
   
